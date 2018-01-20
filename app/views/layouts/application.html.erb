@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GameApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand " href="<%= users_path %>">Fantasy Foosball</a>
+    <a class="navbar-brand active" href="<%= new_user_path %>">New User</a>
+    <a class="navbar-brand" href="<%= teams_path %>">Team</a>
+    <a class="navbar-brand" href="<%= data_team_details_games_path %>">Match</a>
+    <a class="navbar-brand" href="<%= games_path %>">Team Ranking</a>
+</nav>
+  </nav>
+
+  	<!-- Flash Message -->
+	<% flash.each do |name, msg| %>
+	  <% differ_class = (name == "notice") ? 'success_message' : 'error_message'%>
+	  <div class="<%=differ_class%>", id="successMessage">
+	      <h4> <%= msg %></h4>
+	    </div>
+	<% end %>
+  <!-- end -->
+    <%= yield %>
+  </body>
+</html>

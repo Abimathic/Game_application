@@ -1,0 +1,19 @@
+<tr class='fields'>
+  <td>
+    <%= t.select :team_id, options_for_select(Team.all.map {|s| [s.name, s.id]}, selected: t.object.team_id), {include_blank: '--Select Team--'},{class: 'form-control team-name'} %>
+  </td>
+  <td>
+   <%= t.text_field :score,class: "form-control game-score" %>
+  </td>
+  
+  <td>
+    <%= t.text_field :win,class: "form-control game-win" %>
+  </td>
+  <td>
+    <%= t.text_field :loss,class: "form-control", value: 0 %>
+  </td>
+  <td>
+     <%= t.link_to_remove "Delete", class: "btn btn-danger" %>
+   
+  </td>
+</tr>

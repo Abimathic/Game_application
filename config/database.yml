@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  #database: mrf_demo_23_08_17
+  #database: new_mrf_9_10_17
+  database: game_db
+  pool: 5
+  username: postgres
+  password: checking

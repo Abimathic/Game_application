@@ -1,0 +1,31 @@
+<%= form_for(@team) do |form| %>
+<div class= "col-xs-4">
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :team_name %>
+    <%= form.text_field :name, class: "" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :users %>
+    <%= form.select :users, options_for_select(User.all.collect {|c| [c.first_name, c.id]}, :selected => @team.users), { :include_blank => "Please select users"}, {:class => "dropdown", multiple: true} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit @team.new_record? ? "Save" : "Update", class: "btn btn-primary" %>
+    <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+
+  </div>
+</div>
+<% end %>

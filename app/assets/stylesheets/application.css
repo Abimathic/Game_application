@@ -1,0 +1,31 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+*= require select2
+ *= require_self
+ */
+.error
+{
+border:1px solid red !important;  
+}
+body {
+  font-family: verdana;
+  font-size: 15px;
+}
+.navbar
+{ margin-bottom: 5px !important; }
+ .success_message { background: #dff0d8; border: 1px solid #d6e9c6; border-radius: 5px; width: 95%; max-width: 500px; text-align: center; position: absolute; left: 0; right: 0; top: 12px; margin: 0 auto; padding: 15px; z-index: 10000 }
+}
+.success_message h4 { font-family: 'Roboto-Bold'; font-size: 15px; color: #3c763d; margin: 0px }
+.error_message { background: #f2dede; border: 1px solid #ebccd1; border-radius: 5px; width: 95%; max-width: 500px; text-align: center; position: absolute; left: 0; right: 0; top: 12px; margin: 0 auto; padding: 15px; z-index: 10000 }
+.error_message h4 { font-family: 'Roboto-Bold'; font-size: 15px; color: #a94442; margin: 0px }

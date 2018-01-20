@@ -1,0 +1,47 @@
+<%= nested_form_for @game do |f| %>
+  <div class="row">
+    <div class="col-xs-2">
+    	<%= f.text_field :name, class: "form-control", placeholder: "Match/Game Name" %>
+    </div>
+  </div>
+<br/>
+<div class="row">
+<div class="col-xs-8">
+  <table class="table table-bordered" id="incident_capas">
+    <thead>
+      <tr >
+        <th class="text-center">
+          Choose Team
+        </th>
+        <th class="text-center"  width="180">
+          Score
+        </th>
+        <th class="text-center">
+          Win
+        </th>
+        <th class="text-center" width="150">
+          Loss
+        </th>  
+        <th class="text-center">
+         Action
+        </th>
+      </tr>
+    </thead>
+        <tbody>
+          <%= f.fields_for :team_details, :wrapper => false  do |t| %>
+            <%= render 'team_details', t: t %>
+          <% end %>
+        </tbody>
+        <tr class="obsaddrowtr">
+          <td colspan="5"><%= f.link_to_add "Add Row", :team_details,class: 'btn btn-primary' %></td>
+        </tr>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col-xs-2">
+      <%= f.submit @game.new_record? ? "Save" : "Update", class: "btn btn-primary game-submit" %>
+      <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+    </div>
+</div>
+<%end %>

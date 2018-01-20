@@ -1,0 +1,20 @@
+<h4 style="float: left;">Match List</h4>
+<h4 style="float: right;"><%= link_to 'New Match', new_game_path, class: "btn btn-primary" %></h4>
+<table class="table table-striped">
+  <thead>
+    <tr class="bg-warning">
+      <th>Match name</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Game.all.each do |g| %>
+      <tr>
+        <td><%= g.name %></td>
+        <td><%= link_to 'Edit', edit_game_path(g) %></td>
+        <td><%= link_to 'Destroy', g, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
