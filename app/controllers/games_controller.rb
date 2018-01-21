@@ -12,7 +12,7 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     respond_to do |format|
       if @game.save
-        format.html { redirect_to games_path, notice: 'Game was successfully created.' }
+        format.html { redirect_to data_team_details_games_path, notice: 'Match was successfully created.' }
       else
         format.html { render :new }
       end
@@ -25,7 +25,7 @@ class GamesController < ApplicationController
   def update
     respond_to do |format|
       if @game.update(game_params)
-        format.html { redirect_to games_path, notice: 'Game was successfully updated.' }
+        format.html { redirect_to data_team_details_games_path, notice: 'Match was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -35,7 +35,7 @@ class GamesController < ApplicationController
   def destroy
     @game.destroy
     respond_to do |format|
-      format.html { redirect_to games_path, notice: 'Game was successfully destroyed.' }
+      format.html { redirect_to data_team_details_games_path, notice: 'Match was successfully destroyed.' }
     end
   end
 

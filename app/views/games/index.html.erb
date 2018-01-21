@@ -3,7 +3,7 @@
 <div class= "col-xs-6">
 <table class="table table-striped">
   <thead>
-    <tr class="bg-warning">
+    <tr class="info">
       <th>Rank</th>
       <th>Team Name</th>
     </tr>
@@ -11,9 +11,11 @@
    <% total_val = {} %>
     <% Team.all.each do |team| %>
        <% a = TeamDetail.where(team_id: team.id) %>
+       <% if a.present? %>
        <% win_count = a.pluck(:win).inject(0){|sum,x| sum + x }.to_f %>
        <% winning_percentage = (win_count/a.count)*100 %>
-      <% total_val["#{team.name}"]  = winning_percentage %>
+       <% total_val["#{team.name}"]  = winning_percentage %>
+       <% end %>
     <% end %>
     <% all_datas = total_val.sort_by {|k,v| v}.reverse %>
   <tbody>

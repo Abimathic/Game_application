@@ -3,6 +3,8 @@
     <div class="col-xs-2">
     	<%= f.text_field :name, class: "form-control", placeholder: "Match/Game Name" %>
     </div>
+    <div class="col game-name">
+    </div>
   </div>
 <br/>
 <div class="row">
@@ -41,7 +43,7 @@
 <div class="row">
   <div class="col-xs-2">
       <%= f.submit @game.new_record? ? "Save" : "Update", class: "btn btn-primary game-submit" %>
-      <%= link_to 'Back', users_path, class: "btn btn-primary" %>
+      <%= link_to 'Back', data_team_details_games_path, class: "btn btn-primary" %>
     </div>
 </div>
 <%end %>

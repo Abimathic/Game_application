@@ -7,7 +7,8 @@
   </td>
   
   <td>
-    <%= t.text_field :win,class: "form-control game-win" %>
+    <%= t.text_field :win,class: "form-control game-win", data: t.index %>
+    <div class="error-jquery_<%= t.index %> win-error"></div>
   </td>
   <td>
     <%= t.text_field :loss,class: "form-control", value: 0 %>
